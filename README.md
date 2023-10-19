@@ -19,7 +19,13 @@ The basic unit of Lol-lang code is the pipeline. A pipeline is a series of opera
 #### Here's an example of a pipeline:
 
 ```lol
-1..10 | for into: num | num | echo
+1..10 | for into: num | num | echo | end
+```
+
+or
+
+```lol
+1..10 | for | echo | end
 ```
 
 This code prints the numbers 1 to 10. The '1..10' is the input, which is a range of numbers. The 'for into: num' assigns each number in the range to the 'num' variable. The 'num' operation simply passes its input through unchanged. The 'echo' operation prints its input.
@@ -33,6 +39,13 @@ fn double: x | x * 2 | end
 1..5 | for into: num | double num | echo | end
 ```
 
+or
+
+```lol
+fn double | _v * 2 | end
+1..5 | for | double | echo | end
+```
+
 This code doubles each number from 1 to 5 and then prints the result.
 
 #### Loops and Control Structures
@@ -43,6 +56,12 @@ The 'if' construct is used for conditional execution. 'if' only executes its cod
 
 ```lol
 1..10 | for into: num | if num % 2 | num | echo | end | end
+```
+
+or
+
+```lol
+1..10 | for | if _v % 2 | echo | end | end
 ```
 
 #### Using the `_v` Variable in Lol-lang
