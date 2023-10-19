@@ -8,7 +8,7 @@ The goal of this language is to allow anyone to easily program without understan
 
 To reliably operate user-implemented functions in Serverless, it implements a distributed processing system based on the Erlang VM, which is optimized for high availability. It also uses a Pluggable structure to allow anyone to develop and share underlying functions - a feature already implemented in Dexy-Lang.
 
-### Getting Started
+## Getting Started
 
 To get started with Lol-lang, you need to install the Lol-lang interpreter on your system. The interpreter handles the execution of your Lol-lang code.
 
@@ -16,7 +16,7 @@ To get started with Lol-lang, you need to install the Lol-lang interpreter on yo
 
 The basic unit of Lol-lang code is the pipeline. A pipeline is a series of operations that are applied to some input in order. Each operation in the pipeline is separated by the pipe character '|'.
 
-#### Here's an example of a pipeline:
+Here's an example of a pipeline:
 
 ```lol
 1..10 | for into: num | num | echo | end
@@ -38,7 +38,7 @@ Here's the breakdown:
 
 So, this code will print the numbers 1, 2, 3, ..., 10, each on a new line.
 
-#### Function Definition and Calling
+### Function Definition and Calling
 
 Functions can be defined using the 'fn' keyword. A function is a code block that takes input and generates output. For example, the following code defines a function that doubles a given number and then calls it:
 
@@ -65,7 +65,7 @@ Here's the breakdown:
   
 So, this code will print the numbers 2, 4, 6, 8, and 10, which are the double of each number from 1 to 5.
 
-#### Loops and Control Structures
+### Loops and Control Structures
 
 The 'for' construct is the basic structure for loops. The 'for' loop executes a block of code for each item in the pipeline. For example, the code above repeats the action of assigning a value to the 'num' variable and printing it for each number from 1 to 10.
 
@@ -93,7 +93,7 @@ Here's the breakdown:
 
 So, this code will print the odd numbers 1, 3, 5, 7, 9, each on a new line.
 
-#### Using the `_v` Variable in Lol-lang
+### Using the `_v` Variable in Lol-lang
 
 In Lol-lang, the `_v` variable is a special variable that automatically captures the value of each item in the pipeline. This makes it especially useful in loops and other constructs where you need to perform operations on each item in a sequence.
 
