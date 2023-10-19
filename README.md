@@ -30,11 +30,12 @@ or
 
 Here's the breakdown:
 
-1..10 generates a sequence of numbers from 1 to 10.
-for into: num is a loop construct that iterates over each number in the sequence, storing the current number into the num variable.
-num is an operation that simply returns the current number.
-echo prints the result of the preceding operation in the pipeline, which is the current number.
-end terminates the for loop.
+- `1..10` generates a sequence of numbers from 1 to 10.
+- `for into: num` is a loop construct that iterates over each number in the sequence, storing the current number into the num variable.
+- `num` is an operation that simply returns the current number.
+- `echo` prints the result of the preceding operation in the pipeline, which is the current number.
+- `end` terminates the for loop.
+
 So, this code will print the numbers 1, 2, 3, ..., 10, each on a new line.
 
 #### Function Definition and Calling
@@ -55,12 +56,13 @@ fn double | _v * 2 | end
 
 Here's the breakdown:
 
-fn double x: 0 | x * 2 | end defines a function named double that takes a parameter x with a default value of 0. This function multiplies x by 2 and returns the result.
-1..5 generates a sequence of numbers from 1 to 5.
-for into: num is the loop construct that iterates over each number in the sequence, storing the current number into the num variable.
-double num calls the double function with the current number as the argument, doubling the number.
-echo prints the result of the preceding operation in the pipeline, which is the doubled number.
-end terminates the for loop.
+- `fn double x: 0 | x * 2 | end` defines a function named double that takes a parameter x with a default value of 0. This function multiplies x by 2 and returns the result.
+- `1..5` generates a sequence of numbers from 1 to 5.
+- `for into: num` is the loop construct that iterates over each number in the sequence, storing the current number into the num variable.
+- `double num` calls the double function with the current number as the argument, doubling the number.
+- `echo` prints the result of the preceding operation in the pipeline, which is the doubled number.
+- `end` terminates the for loop.
+  
 So, this code will print the numbers 2, 4, 6, 8, and 10, which are the double of each number from 1 to 5.
 
 #### Loops and Control Structures
@@ -78,15 +80,17 @@ or
 ```lol
 1..10 | for | if _v % 2 | echo | end | end
 ```
+
 Here's the breakdown:
 
-1..10 generates a sequence of numbers from 1 to 10.
-for into: num is the loop construct that iterates over each number in the sequence, storing the current number into the num variable.
-if num % 2 checks if the current number is odd. The % operator calculates the remainder of the division of num by 2. If num is odd, num % 2 will be 1, which is truthy in a boolean context, so the code inside the if block will execute.
-num is an operation that simply returns the current number.
-echo prints the result of the preceding operation in the pipeline, which is the current number if it's odd.
-The first end terminates the if statement.
-The second end terminates the for loop.
+- `1..10` generates a sequence of numbers from 1 to 10.
+- `for into: num` is the loop construct that iterates over each number in the sequence, storing the current number into the `num` variable.
+- `if num % 2` checks if the current number is odd. The `%` operator calculates the remainder of the division of `num` by 2. If `num` is odd, `num % 2` will be 1, which is truthy in a boolean context, so the code inside the `if` block will execute.
+- `num` is an operation that simply returns the current number.
+- `echo` prints the result of the preceding operation in the pipeline, which is the current number if it's odd.
+- The first `end` terminates the `if` statement.
+- The second `end` terminates the `for` loop.
+
 So, this code will print the odd numbers 1, 3, 5, 7, 9, each on a new line.
 
 #### Using the `_v` Variable in Lol-lang
