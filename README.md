@@ -35,7 +35,7 @@ This code prints the numbers 1 to 10. The '1..10' is the input, which is a range
 Functions can be defined using the 'fn' keyword. A function is a code block that takes input and generates output. For example, the following code defines a function that doubles a given number and then calls it:
 
 ```lol
-fn double: x | x * 2 | end
+fn double x: 0 | x * 2 | end
 1..5 | for into: num | double num | echo | end
 ```
 
